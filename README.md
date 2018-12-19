@@ -24,3 +24,6 @@ Vous souhaitez maintenant aller plus loin et proposer les options suivantes :
   
 Adaptez le programme pour qu'il puisse offrir ces fonctionnalités. A vous de jouer !  
 
+-----------------------------------------------------------------------------------------  
+L'idée de citations de Macron revisitées n'est nullement dictée par des considérations politiques mais juste dans l'air du temps.  
+
