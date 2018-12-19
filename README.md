@@ -1,7 +1,8 @@
-# macrontron
-Projet 5 OpenClassRoom : Imaginez un générateur de citations en Javascript  
+# macrontron  
   
-Etape 1 : des citations aléatoires  
+## Projet 5 OpenClassRoom : Imaginez un générateur de citations en Javascript  
+  
+__Etape 1 : des citations aléatoires__  
   
 Le saviez-vous ? Il existe des générateurs de texte en ligne.  
 Tapez "générateur de citation" et vous trouverez de nombreux sites qui génèrent aléatoirement des citations en assemblant des bouts de phrase.  
@@ -14,7 +15,7 @@ Vous avez le Pipotron et même le... Vandammotron. A votre tour d'en créer un !
   
 Le programme peut simplement afficher le résultat dans la console JavaScript..  
   
-Etape 2 : des citations configurables  
+__Etape 2 : des citations configurables__  
   
 Vous souhaitez maintenant aller plus loin et proposer les options suivantes :  
   
