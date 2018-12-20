@@ -5,10 +5,8 @@ Git : https://github.com/EmericHochart/macrontron
 
 // Création d'un tableau à partir d'une variable chaîne
 // La séparation se fait par le caractère &
-const texte1="Le Gaulois réfractaire au changement&aime son pays&c'est pour se plaindre&L'horticulteur&traverse la rue&il trouve le bonheur&Le Français&parle librement&c'est la seule chose qu'il n'a pas le droit de faire&L'adolescent de Banlieue&m'appelle Manu&c'est pour donner des leçons aux autres&Le pauvre&reste pauvre&c'est pas pour s'en sortir&Le Fainéant&pense qu'on ne doit pas bouger&c'est parce que la France n'est pas réformable&Le gilet Jaune&attend au rond point&c'est pour manifester son mécontentement&Un parent&a 7 ou 8 enfants&c'est un manque d'éducation&Un ex-salarié&fout le bordel&il ferait mieux d'aller regarder s'il ne peut pas avoir un poste&Quelqu'un&n'est rien&il peut devenir quelqu'un qui réussit&Un jeune&travaille avec un T-shirt&c'est pour se payer un costard&Un illétré&fait la grève&c'est souvent parce qu'il est ouvrier&Un usager des transports&voyage en car&c'est parce que le train est onéreux&Un Kwassa-Kwassa&pêche peu&c'est parce qu'il ramène du Comorien";
-const texte2="Le Gaulois réfractaire au changement&aime son pays&c'est pour se plaindre&L'horticulteur&traverse la rue&il trouve le bonheur&Le Français&parle librement&c'est la seule chose qu'il n'a pas le droit de faire&L'adolescent de Banlieue&m'appelle Manu&c'est pour donner des leçons aux autres&Le pauvre&reste pauvre&c'est pas pour s'en sortir&Le Fainéant&pense qu'on ne doit pas bouger&c'est parce que la France n'est pas réformable&Le gilet Jaune&attend au rond point&c'est pour manifester son mécontentement&Un parent&a 7 ou 8 enfants&c'est un manque d'éducation&Un ex-salarié&fout le bordel&il ferait mieux d'aller regarder s'il ne peut pas avoir un poste&Quelqu'un&n'est rien&il peut devenir quelqu'un qui réussit&Un jeune&travaille avec un T-shirt&c'est pour se payer un costard&Un illétré&fait la grève&c'est souvent parce qu'il est ouvrier&Un usager des transports&voyage en car&c'est parce que le train est onéreux&Un Kwassa-Kwassa&pêche peu&c'est parce qu'il ramène du Comorien";
-let morceauxPhrase= texte1.split('&');
-let longueur=morceauxPhrase.length;
+const macronTexte="Le Gaulois réfractaire au changement&aime son pays&c'est pour se plaindre&L'horticulteur&traverse la rue&il trouve le bonheur&Le Français&parle librement&c'est la seule chose qu'il n'a pas le droit de faire&L'adolescent de Banlieue&m'appelle Manu&c'est pour donner des leçons aux autres&Le pauvre&reste pauvre&c'est pas pour s'en sortir&Le Fainéant&pense qu'on ne doit pas bouger&c'est parce que la France n'est pas réformable&Le gilet Jaune&attend au rond point&c'est pour manifester son mécontentement&Un parent&a 7 ou 8 enfants&c'est un manque d'éducation&Un ex-salarié&fout le bordel&il ferait mieux d'aller regarder s'il ne peut pas avoir un poste&Quelqu'un&n'est rien&il peut devenir quelqu'un qui réussit&Un jeune&travaille avec un T-shirt&c'est pour se payer un costard&Un illétré&fait la grève&c'est souvent parce qu'il est ouvrier&Un usager des transports&voyage en car&c'est parce que le train est onéreux&Un Kwassa-Kwassa&pêche peu&c'est parce qu'il ramène du Comorien";
+const giletTexte="Le pouvoir d'achat&n'est pas dans les débats&on nous prend pour des cons&Le travailleur&est dans le même pétrin que nous&on n'est pas là pour l'embêter&L'écologie&n'est pas le but premier&çà ne nous préoccupe pas pour l'instant&L'information à la télévision&dit tout et n'importe quoi&on le voit sur Facebook&Un manifestant&tombe à cause du gouvernement&c'est sûrement un policier le responsable."
 // Définition des fonctions
 // On définit une fonction qui génère un entier aléatoire dans un intervalle [min, max]
 function genererEntierAleatoire(min, max) {
@@ -21,7 +19,10 @@ function genererEntierAleatoire(min, max) {
 	return Math.floor(Math.random() * (max - min +1)) + min;
 };
 // Fonction qui génère la phrase aléatoire
-function phraseAleatoire(){
+function phraseAleatoire(texte){
+	// On crée un tableau à partir du texte via la séparation &
+	let morceauxPhrase=texte.split('&');
+	let longueur=morceauxPhrase.length;
 	// On intialise par des assertions fausses afin que la condition soit prise au moins une fois 
 	let positionDebut=1;
 	let positionMilieu=2;
@@ -96,7 +97,7 @@ while(condition){
 				nombreCitations=Number(prompt("Combien de citations ? (entre 1 et 5)"));
 				if (nombreCitations>=1&&nombreCitations<=5){
 					for (i=1;i<=nombreCitations;i++){
-						console.log(phraseAleatoire());
+						console.log(phraseAleatoire(macronTexte));
 					}
 				}
 				else {
@@ -124,7 +125,7 @@ while(condition){
 				nombreCitations=Number(prompt("Combien de citations ? (entre 1 et 5)"));
 				if (nombreCitations>=1&&nombreCitations<=5){
 					for (i=1;i<=nombreCitations;i++){
-						console.log(phraseAleatoire());
+						console.log(phraseAleatoire(giletTexte));
 					}
 				}
 				else {
