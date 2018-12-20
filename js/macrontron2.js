@@ -59,11 +59,98 @@ function normaliserPhrase(phrase){
 	return phraseNormalise;
 }
 // On affiche la phrase aléatoire en faisant appel à la fonction phraseAleatoire();
-console.log("La phrase aléatoire :");
-console.log(phraseAleatoire());
+// console.log("La phrase aléatoire :");
+// console.log(phraseAleatoire());
+
+/*
+Création du Menu
+1.Lister les contacts
+2.Ajouter un contact
+0.Quitter 
+*/
+console.log("Bienvenue dans le générateur de citations !");
+// Initialisation de la condition
+let condition=true;
+// Boucle du menu
+while(condition){
+	// Affichage du menu
+	console.log("\n1 : Macrotron");
+	console.log("2 : Giletotron");
+	console.log("0 : Quitter");
+	// On demande à l'utilisateur de choisir une option
+	optionGeneral=prompt("Choisissez une option :");
+	if (optionGeneral==="0"){
+		// Le choix 0 permet de quitter le programme
+		condition=false;
+		console.log("\nAu revoir !");
+	}
+	else if (optionGeneral==="1"){
+		// Le choix 1 oriente vers le nouveau menu avec en condition macrotron
+		let macrontron=true;
+		while(macrontron){
+		// Affichage du menu
+		console.log("\n1 : Nombre de citations");
+		console.log("0 : Retour");
+		optionMacrontron=prompt("Choisissez une option");
+			if (optionMacrontron==="1"){
+				nombreCitations=Number(prompt("Combien de citations ? (entre 1 et 5)"));
+				if (nombreCitations>=1&&nombreCitations<=5){
+					for (i=1;i<=nombreCitations;i++){
+						console.log(phraseAleatoire());
+					}
+				}
+				else {
+					console.log("Ce choix n'est pas valide");
+				};
+			}
+			else if (optionMacrontron==="0"){
+				macrontron=false;
+			}
+			else {
+				// Un autre choix indique de saisir un choix valide
+				console.log("\nMerci de choisir une option valide !");
+			}
+		};
+	}
+	else if (optionGeneral==="2"){
+		// Le choix 1 oriente vers le nouveau menu avec en condition macrotron
+		let macrontron=true;
+		while(macrontron){
+		// Affichage du menu
+		console.log("\n1 : Nombre de citations");
+		console.log("0 : Retour");
+		optionMacrontron=prompt("Choisissez une option");
+			if (optionMacrontron==="1"){
+				nombreCitations=Number(prompt("Combien de citations ? (entre 1 et 5)"));
+				if (nombreCitations>=1&&nombreCitations<=5){
+					for (i=1;i<=nombreCitations;i++){
+						console.log(phraseAleatoire());
+					}
+				}
+				else {
+					console.log("Ce choix n'est pas valide");
+				};
+			}
+			else if (optionMacrontron==="0"){
+				macrontron=false;
+			}
+			else {
+				// Un autre choix indique de saisir un choix valide
+				console.log("\nMerci de choisir une option valide !");
+			}
+		};
+	}
+	else {
+		// Un autre choix indique de saisir un choix valide
+		console.log("\nMerci de choisir une option valide !");
+	};
+};
+
+
 
 /* TODO LIST
 -peut-être faire 3 tableaux au lieu d'un ça sera plus simple ... mais moins fun
+- le menu est fait, il faut lier le menu au choix du texte (Macrontron ou Gilettotron) Modifier peut-être la fonction de génération de phrase aleatoire en ajoutant un argument en paramètre
 -pourquoi pas utiliser les objets bien qu'inutile
 -minimiser les lignes de codes
 */
