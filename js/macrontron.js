@@ -35,17 +35,33 @@ function phraseAleatoire(){
 	while (positionFin%3!==2)
 		{positionFin=genererEntierAleatoire(0,longueur-1);};
 	// On construit la phrase aléatoire
-	let phrase=morceauxPhrase[positionDebut]+" "+morceauxPhrase[positionMilieu]+", "+morceauxPhrase[positionFin]+".";
+	let phrase=morceauxPhrase[positionDebut]+" "+morceauxPhrase[positionMilieu]+", "+morceauxPhrase[positionFin];
+	phrase=normaliserPhrase(phrase);
 	// On renvoie la phrase
 	return phrase;
+};
+// Fonction qui met une majuscule à la première lettre du début de la phrase et un point à la fin.
+function normaliserPhrase(phrase){
+	// On récupère la première lettre de la phrase et on la met en majuscule
+	let premiereLettre=phrase.charAt(0).toUpperCase();
+	// On récupère la longueur de la phrase
+	let longueurPhrase=phrase.length;
+	// On récupère la dernière lettre de la phrase
+	let derniereLettre=phrase.charAt(longueurPhrase-1);
+	// On remplace la première lettre de la phrase par sa majuscule
+	let phraseNormalise = phrase.replace(phrase.charAt(0),premiereLettre);
+	// Si la dernière lettre n'est pas un point, on ajoute un point
+	if (derniereLettre!=="."&&derniereLettre!=="!"&&derniereLettre!=="?") {
+		phraseNormalise+=".";
+	};
+	//On renvoie la phrase normalisée
+	return phraseNormalise;
 }
 // On affiche la phrase aléatoire en faisant appel à la fonction phraseAleatoire();
 console.log("La phrase aléatoire :");
 console.log(phraseAleatoire());
 
-
 /* TODO LIST
--petite fonction pour vérifier que la première lettre de la première phrase est en majuscule et une autre pour vérifier qu'il y a un point en fin de phrase ?
 -peut-être faire 3 tableaux au lieu d'un ça sera plus simple ... mais moins fun
 -faire le menu avec la boucle
 -pourquoi pas utiliser les objets bien qu'inutile
