@@ -13,7 +13,9 @@ Vous avez le Pipotron et même le... Vandammotron. A votre tour d'en créer un !
 - Chaque citation est la combinaison d'au moins 3 morceaux de phrases (à vous de préparer ces morceaux de phrase)  
 - A défaut d'être intelligible, la phrase doit être cohérente (pas de point d'exclamation au milieu d'une phrase)  
   
-Le programme peut simplement afficher le résultat dans la console JavaScript..  
+Le programme peut simplement afficher le résultat dans la console JavaScript.. 
+
+Contenu supplémentaire : la citation est affichée dans le navigateur également. 
   
 __Etape 2 : des citations configurables__  
   
@@ -26,5 +28,5 @@ Vous souhaitez maintenant aller plus loin et proposer les options suivantes :
 Adaptez le programme pour qu'il puisse offrir ces fonctionnalités. A vous de jouer !  
 
 ---  
-L'idée de citations de Macron revisitées n'est nullement dictée par des considérations politiques mais juste dans l'air du temps.  
-
+L'idée de citations de Macron ou des gilets jaunes revisitées n'est nullement dictée par des considérations politiques mais juste dans l'air du temps.
+Les citations générées sont purement aléatoires et ne reflètent aucunement la pensée de l'auteur de ce script.  
