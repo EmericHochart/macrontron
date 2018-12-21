@@ -57,9 +57,12 @@ function normaliserPhrase(phrase){
 	//On renvoie la phrase normalisée
 	return phraseNormalise;
 }
-// On affiche la phrase aléatoire en faisant appel à la fonction phraseAleatoire();
+// On affiche dans la console la phrase aléatoire en faisant appel à la fonction phraseAleatoire();
 console.log("La phrase aléatoire :");
-console.log(phraseAleatoire());
+let resultat=phraseAleatoire();
+console.log(resultat);
+// Version HTMl : on affiche dans la page html la phrase aléatoire
+document.getElementById('citation').innerHTML = resultat;
 
 /* TODO LIST
 -peut-être faire 3 tableaux au lieu d'un ça sera plus simple ... mais moins fun

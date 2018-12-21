@@ -3,12 +3,13 @@ Author : Emeric Hochart
 Git : https://github.com/EmericHochart/macrontron
 */
 
-// Création d'un tableau à partir d'une variable chaîne
+// Création de tableaux à partir de variables chaînes
 // La séparation se fait par le caractère &
 const macronTexte="Le Gaulois réfractaire au changement&aime son pays&c'est pour se plaindre&L'horticulteur&traverse la rue&il trouve le bonheur&Le Français&parle librement&c'est la seule chose qu'il n'a pas le droit de faire&L'adolescent de Banlieue&m'appelle Manu&c'est pour donner des leçons aux autres&Le pauvre&reste pauvre&c'est pas pour s'en sortir&Le Fainéant&pense qu'on ne doit pas bouger&c'est parce que la France n'est pas réformable&Le gilet Jaune&attend au rond point&c'est pour manifester son mécontentement&Un parent&a 7 ou 8 enfants&c'est un manque d'éducation&Un ex-salarié&fout le bordel&il ferait mieux d'aller regarder s'il ne peut pas avoir un poste&Quelqu'un&n'est rien&il peut devenir quelqu'un qui réussit&Un jeune&travaille avec un T-shirt&c'est pour se payer un costard&Un illétré&fait la grève&c'est souvent parce qu'il est ouvrier&Un usager des transports&voyage en car&c'est parce que le train est onéreux&Un Kwassa-Kwassa&pêche peu&c'est parce qu'il ramène du Comorien";
 const giletTexte="Le pouvoir d'achat&n'est pas dans les débats&on nous prend pour des cons&Le travailleur&est dans le même pétrin que nous&on n'est pas là pour l'embêter&L'écologie&n'est pas le but premier&çà ne nous préoccupe pas pour l'instant&L'information à la télévision&dit tout et n'importe quoi&on le voit sur Facebook&Un manifestant&tombe à cause du gouvernement&c'est sûrement un policier le responsable."
+
 // Définition des fonctions
-// On définit une fonction qui génère un entier aléatoire dans un intervalle [min, max]
+// Fonction qui génère un entier aléatoire dans un intervalle [min, max]
 function genererEntierAleatoire(min, max) {
 	// La fonction Math.ceil() retourne le plus petit entier supérieur ou égal au nombre donné.
 	min = Math.ceil(min);
@@ -59,16 +60,36 @@ function normaliserPhrase(phrase){
 	//On renvoie la phrase normalisée
 	return phraseNormalise;
 }
-// On affiche la phrase aléatoire en faisant appel à la fonction phraseAleatoire();
-// console.log("La phrase aléatoire :");
-// console.log(phraseAleatoire());
+// Fonction pour le sous-menu
+function pipotron(texte){
+	let pipotron=true;
+		while(pipotron){
+		// Affichage du menu
+		console.log("\n1 : Nombre de citations");
+		console.log("0 : Retour");
+		optionPipotron=prompt("Choisissez une option");
+			if (optionPipotron==="1"){
+				nombreCitations=Number(prompt("Combien de citations ? (entre 1 et 5)"));
+				if (nombreCitations>=1&&nombreCitations<=5){
+					for (i=1;i<=nombreCitations;i++){
+						console.log(phraseAleatoire(texte));
+					}
+				}
+				else {
+					console.log("Ce choix n'est pas valide");
+				};
+			}
+			else if (optionPipotron==="0"){
+				pipotron=false;
+			}
+			else {
+				// Un autre choix indique de saisir un choix valide
+				console.log("\nMerci de choisir une option valide !");
+			}
+		};
+};
 
-/*
-Création du Menu
-1.Lister les contacts
-2.Ajouter un contact
-0.Quitter 
-*/
+// Création du Menu 
 console.log("Bienvenue dans le générateur de citations !");
 // Initialisation de la condition
 let condition=true;
@@ -86,60 +107,12 @@ while(condition){
 		console.log("\nAu revoir !");
 	}
 	else if (optionGeneral==="1"){
-		// Le choix 1 oriente vers le nouveau menu avec en condition macrotron
-		let macrontron=true;
-		while(macrontron){
-		// Affichage du menu
-		console.log("\n1 : Nombre de citations");
-		console.log("0 : Retour");
-		optionMacrontron=prompt("Choisissez une option");
-			if (optionMacrontron==="1"){
-				nombreCitations=Number(prompt("Combien de citations ? (entre 1 et 5)"));
-				if (nombreCitations>=1&&nombreCitations<=5){
-					for (i=1;i<=nombreCitations;i++){
-						console.log(phraseAleatoire(macronTexte));
-					}
-				}
-				else {
-					console.log("Ce choix n'est pas valide");
-				};
-			}
-			else if (optionMacrontron==="0"){
-				macrontron=false;
-			}
-			else {
-				// Un autre choix indique de saisir un choix valide
-				console.log("\nMerci de choisir une option valide !");
-			}
-		};
+		// Le choix 1 oriente vers le sous-menu avec en condition macronTexte
+		pipotron(macronTexte);
 	}
 	else if (optionGeneral==="2"){
-		// Le choix 1 oriente vers le nouveau menu avec en condition macrotron
-		let macrontron=true;
-		while(macrontron){
-		// Affichage du menu
-		console.log("\n1 : Nombre de citations");
-		console.log("0 : Retour");
-		optionMacrontron=prompt("Choisissez une option");
-			if (optionMacrontron==="1"){
-				nombreCitations=Number(prompt("Combien de citations ? (entre 1 et 5)"));
-				if (nombreCitations>=1&&nombreCitations<=5){
-					for (i=1;i<=nombreCitations;i++){
-						console.log(phraseAleatoire(giletTexte));
-					}
-				}
-				else {
-					console.log("Ce choix n'est pas valide");
-				};
-			}
-			else if (optionMacrontron==="0"){
-				macrontron=false;
-			}
-			else {
-				// Un autre choix indique de saisir un choix valide
-				console.log("\nMerci de choisir une option valide !");
-			}
-		};
+		// Le choix 2 oriente vers le sous-menu avec en condition giletTexte
+		pipotron(giletTexte);
 	}
 	else {
 		// Un autre choix indique de saisir un choix valide
@@ -147,11 +120,7 @@ while(condition){
 	};
 };
 
-
-
 /* TODO LIST
 -peut-être faire 3 tableaux au lieu d'un ça sera plus simple ... mais moins fun
-- le menu est fait, il faut lier le menu au choix du texte (Macrontron ou Gilettotron) Modifier peut-être la fonction de génération de phrase aleatoire en ajoutant un argument en paramètre
--pourquoi pas utiliser les objets bien qu'inutile
 -minimiser les lignes de codes
 */
