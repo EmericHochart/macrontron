@@ -23,20 +23,20 @@ function genererEntierAleatoire(min, max) {
 function phraseAleatoire(texte){
 	// On crée un tableau à partir du texte via la séparation &
 	let morceauxPhrase=texte.split('&');
-	let longueur=morceauxPhrase.length;
+	let longueur=morceauxPhrase.length-1;
 	// On intialise par des assertions fausses afin que la condition soit prise au moins une fois 
 	let positionDebut=1;
 	let positionMilieu=2;
 	let positionFin=3;
 	// On ne prend que les débuts de phrase
 	while (positionDebut%3!==0)
-		{positionDebut=genererEntierAleatoire(0,longueur-1);};
+		{positionDebut=genererEntierAleatoire(0,longueur);};
 	// On ne prend que les milieux de phrase
 	while (positionMilieu%3!==1)
-		{positionMilieu=genererEntierAleatoire(0,longueur-1);};
+		{positionMilieu=genererEntierAleatoire(0,longueur);};
 	// On ne prend que les fins de phrase
 	while (positionFin%3!==2)
-		{positionFin=genererEntierAleatoire(0,longueur-1);};
+		{positionFin=genererEntierAleatoire(0,longueur);};
 	// On construit la phrase aléatoire
 	let phrase=morceauxPhrase[positionDebut]+" "+morceauxPhrase[positionMilieu]+", "+morceauxPhrase[positionFin];
 	phrase=normaliserPhrase(phrase);
