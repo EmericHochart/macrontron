@@ -1,4 +1,4 @@
-# macrontron  
+# Générateur de citations en Javascript  
   
 ## Projet 5 OpenClassRoom : Imaginez un générateur de citations en Javascript  
   
